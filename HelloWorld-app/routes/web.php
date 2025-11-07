@@ -15,6 +15,13 @@ use App\Http\Controllers\TambahDataController;
 |
 */
 
+// Route dari branch KoneksiDatabase
 Route::get('/koneksi', [KoneksiController::class, 'index']);
+
+// Route dari branch TambahData
 Route::get('/tambah', [TambahDataController::class, 'form']);
 Route::post('/tambah', [TambahDataController::class, 'store']);
+
+// Extra route dari branch TambahData (jika ingin dipakai terpisah)
+Route::get('/tambah-data', [TambahDataController::class, 'index']);
+Route::post('/tambah-data', [TambahDataController::class, 'store']);
