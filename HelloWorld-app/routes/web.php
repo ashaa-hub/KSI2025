@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KoneksiController;
+use App\Http\Controllers\TambahDataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/koneksi', [KoneksiController::class, 'test']);
+Route::get('/koneksi', [KoneksiController::class, 'index']);
+Route::get('/tambah', [TambahDataController::class, 'form']);
+Route::post('/tambah', [TambahDataController::class, 'store']);
