@@ -7,18 +7,18 @@ use Illuminate\Support\Facades\DB;
 
 class TambahDataController extends Controller
 {
-    public function form()
+    public function index()
     {
-        return view('tambah');
+        return view('tambahdata'); // Menampilkan form tambah data
     }
 
     public function store(Request $request)
     {
         DB::table('users')->insert([
             'name' => $request->name,
-            'email' => $request->email
+            'email' => $request->email,
         ]);
 
-        return "✅ Data berhasil ditambahkan!";
+        return "Data berhasil ditambahkan!";
     }
 }
